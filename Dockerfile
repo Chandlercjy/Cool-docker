@@ -13,9 +13,11 @@ RUN apt-get update\
     locales-all\
     git \
     make \
+    cmake \
     autojump\
     neovim\
     wget\
+    silversearcher-ag\
     -y\
     # # Cleanup
     && apt-get autoremove -y \
@@ -29,6 +31,7 @@ RUN /bin/bash -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zs
 RUN wget https://repo.anaconda.com/archive/Anaconda3-5.3.0-Linux-x86_64.sh -O ~/anaconda.sh  \
     && /bin/bash ~/anaconda.sh -b -p ~/anaconda \
     && rm ~/anaconda.sh \
+    && /root/anaconda/bin/pip install neovim black
     && apt-get autoremove -y \
     && rm -rf /tmp/* /var/lib/apt/lists/* /root/.cache/*
 
