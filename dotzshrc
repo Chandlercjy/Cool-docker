@@ -1,0 +1,25 @@
+export ZSH=$HOME/.oh-my-zsh
+
+ZSH_THEME="robbyrussell"
+
+plugins=(
+git
+autojump
+wakatime
+)
+
+source $ZSH/oh-my-zsh.sh
+export PATH="/root/anaconda/bin:$PATH"
+
+# Neovim
+alias v="nvim"
+
+# Emacs
+alias e='emacs -nw'
+alias et='emacsclient -t -a ""'
+
+export TERM=xterm-24bits
+
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
